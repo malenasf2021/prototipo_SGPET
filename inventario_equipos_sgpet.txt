@@ -1,0 +1,46 @@
+INVENTARIO DE EQUIPAMIENTO - SGPET
+Laboratorio de Informática / Ceilab
+====================================================
+
+CEIBALITAS (10 unidades - identificadas por número de serie de 10 dígitos)
+----------------------------------------------------------------------
+1.  Ceibalita - N/S 3746317213
+2.  Ceibalita - N/S 9697354961
+3.  Ceibalita - N/S 2181241943
+4.  Ceibalita - N/S 1958682846
+5.  Ceibalita - N/S 4163119785
+6.  Ceibalita - N/S 9963334018
+7.  Ceibalita - N/S 2812140441
+8.  Ceibalita - N/S 1127978094
+9.  Ceibalita - N/S 1939042955
+10. Ceibalita - N/S 9703905715
+
+KITS DE ROBÓTICA (5 unidades - identificados del 1 al 5)
+----------------------------------------------------------------------
+1. Kit Robótica 1
+2. Kit Robótica 2
+3. Kit Robótica 3
+4. Kit Robótica 4
+5. Kit Robótica 5
+
+PLACAS MICRO:BIT (5 unidades - identificadas del 1 al 5)
+----------------------------------------------------------------------
+1. Micro:bit 1
+2. Micro:bit 2
+3. Micro:bit 3
+4. Micro:bit 4
+5. Micro:bit 5
+
+IMPRESORAS 3D (2 unidades - solo disponibles por el día, uso exclusivo
+dentro de la institución, no admiten préstamo para llevar)
+----------------------------------------------------------------------
+1. Impresora 3D 1 - Uso diario / dentro de la institución
+2. Impresora 3D 2 - Uso diario / dentro de la institución
+
+DISPOSITIVOS MULTISENSOR DATALOGGER (5 unidades - identificados del 1 al 5)
+----------------------------------------------------------------------
+1. Multisensor Datalogger 1
+2. Multisensor Datalogger 2
+3. Multisensor Datalogger 3
+4. Multisensor Datalogger 4
+5. Multisensor Datalogger 5

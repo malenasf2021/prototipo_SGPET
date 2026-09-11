@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGPET - Iniciar sesión</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
+                linear-gradient(135deg, #d9d0bc, #f1eadb);
+        }
+
+        .contenedor {
+            width: 100%;
+            max-width: 1080px;
+            min-height: 620px;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            overflow: hidden;
+            border: 1px solid rgba(100, 85, 60, 0.35);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.28);
+            box-shadow: 0 12px 35px rgba(70, 55, 35, 0.25);
+        }
+
+        /* Panel izquierdo */
+        .informacion {
+            padding: 42px 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #222;
+        }
+
+        .encabezado {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .logo {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid #263d4e;
+            border-radius: 50%;
+            color: #263d4e;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .nombre-institucion {
+            color: #263d4e;
+            font-size: 25px;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+
+        .nombre-institucion span {
+            display: block;
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        .informacion h1 {
+            margin-top: 35px;
+            color: #111;
+            font-size: 27px;
+            line-height: 1.15;
+        }
+
+        .descripcion {
+            margin-top: 10px;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .beneficios {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .beneficio {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .icono {
+            width: 30px;
+            min-width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #222;
+            border-radius: 50%;
+            color: #222;
+            font-size: 17px;
+        }
+
+        .beneficio h3 {
+            margin-bottom: 4px;
+            color: #222;
+            font-size: 16px;
+        }
+
+        .beneficio p {
+            color: #333;
+            font-size: 14px;
+            line-height: 1.35;
+        }
+
+        /* Panel derecho */
+        .panel-login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 35px;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 390px;
+            padding: 32px 30px 26px;
+            border-radius: 12px;
+            background: #fff8df;
+            box-shadow: 0 5px 18px rgba(80, 65, 35, 0.16);
+        }
+
+        .login-box h2 {
+            margin-bottom: 24px;
+            color: #222;
+            font-size: 22px;
+        }
+
+        .campo {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .campo input {
+            width: 100%;
+            height: 44px;
+            padding: 0 42px 0 42px;
+            border: 1px solid #d8cbaa;
+            border-radius: 7px;
+            outline: none;
+            background: #fff8e8;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .campo input:focus {
+            border-color: #356487;
+            box-shadow: 0 0 0 2px rgba(53, 100, 135, 0.12);
+        }
+
+        .campo input::placeholder {
+            color: #8a8275;
+        }
+
+        .icono-campo {
+            position: absolute;
+            top: 50%;
+            left: 13px;
+            transform: translateY(-50%);
+            color: #777;
+            font-size: 16px;
+            pointer-events: none;
+        }
+
+        .mostrar-password {
+            position: absolute;
+            top: 50%;
+            right: 13px;
+            transform: translateY(-50%);
+            border: none;
+            background: transparent;
+            color: #777;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .login-box button[type="submit"] {
+            width: 100%;
+            height: 44px;
+            margin-top: 2px;
+            border: none;
+            border-radius: 7px;
+            background: #356487;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .login-box button[type="submit"]:hover {
+            background: #274f6e;
+        }
+
+        .enlace {
+            display: block;
+            margin-top: 17px;
+            color: #333;
+            text-align: center;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .enlace:hover {
+            text-decoration: underline;
+        }
+
+        .error-msg {
+            display: none;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            background: #fdecea;
+            color: #b3261e;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        @media (max-width: 800px) {
+            .contenedor {
+                grid-template-columns: 1fr;
+                max-width: 520px;
+            }
+
+            .informacion {
+                padding: 35px 28px;
+            }
+
+            .encabezado {
+                margin-bottom: 30px;
+            }
+
+            .informacion h1 {
+                font-size: 24px;
+            }
+
+            .panel-login {
+                padding: 10px 25px 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .informacion {
+                padding: 28px 20px;
+            }
+
+            .nombre-institucion {
+                font-size: 22px;
+            }
+
+            .nombre-institucion span {
+                font-size: 17px;
+            }
+
+            .informacion h1 {
+                font-size: 21px;
+            }
+
+            .descripcion {
+                font-size: 14px;
+            }
+
+            .login-box {
+                padding: 27px 20px 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <section class="informacion">
+            <div class="encabezado">
+                <div class="nombre-institucion">
+                    Ce.R.P. Sur Oeste
+                    <span>Taller integrado de sistemas - 2026</span>
+                </div>
+
+                <h1>
+                    Sistema de Gestión de Préstamos de<br>
+                    Equipamiento Tecnológico (SGPET)
+                </h1>
+
+                <p class="descripcion">
+                    Simplifica tus préstamos y reservas de equipamiento tecnológico
+                </p>
+            </div>
+
+            <div class="beneficios">
+                <div class="beneficio">
+                    <div class="icono">◷</div>
+                    <div>
+                        <h3>Consulta de disponibilidad de equipamiento tecnológico</h3>
+                    </div>
+                </div>
+
+                <div class="beneficio">
+                    <div class="icono">□</div>
+                    <div>
+                        <h3>Reservas anticipadas</h3>
+                        <p>
+                            Reserva equipos con anticipación para clases y
+                            actividades educativas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="beneficio">
+                    <div class="icono">♧</div>
+                    <div>
+                        <h3>Notificaciones</h3>
+                        <p>
+                            Recibe notificaciones de tus reservas y fechas de devolución.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel-login">
+            <div class="login-box">
+                <h2>Iniciar Sesión</h2>
+
+                <div class="error-msg" id="error-msg"></div>
+
+                <form action="login_process.php" method="POST" id="loginForm">
+                    <div class="campo">
+                        <span class="icono-campo">♙</span>
+                        <input
+                            type="text"
+                            id="id"
+                            name="id"
+                            placeholder="Usuario (Cédula de Identidad)"
+                            maxlength="8"
+                            pattern="[0-9]{8}"
+                            inputmode="numeric"
+                            autocomplete="username"
+                            required
+                            autofocus
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <span class="icono-campo">▣</span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Contraseña"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="mostrar-password"
+                            id="mostrarPassword"
+                            aria-label="Mostrar contraseña"
+                        >
+                            ◉
+                        </button>
+                    </div>
+
+                    <button type="submit">Ingresar</button>
+                </form>
+
+                <a href="#" class="enlace">¿Olvidaste tu contraseña?</a>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const mensajeError = params.get("error");
+        const errorBox = document.getElementById("error-msg");
+
+        if (mensajeError) {
+            errorBox.textContent = decodeURIComponent(mensajeError);
+            errorBox.style.display = "block";
+        }
+
+        const password = document.getElementById("password");
+        const mostrarPassword = document.getElementById("mostrarPassword");
+
+        mostrarPassword.addEventListener("click", () => {
+            const estaOculta = password.type === "password";
+
+            password.type = estaOculta ? "text" : "password";
+            mostrarPassword.textContent = estaOculta ? "◌" : "◉";
+            mostrarPassword.setAttribute(
+                "aria-label",
+                estaOculta ? "Ocultar contraseña" : "Mostrar contraseña"
+            );
+        });
+    </script>
+
+</body>
+</html>
