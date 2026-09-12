@@ -72,11 +72,4 @@ CÓMO FUNCIONA
   dashboard, lo manda al login; si un usuario intenta entrar al panel
   de otro rol, lo redirige automáticamente al suyo.
 
-PRÓXIMOS PASOS SUGERIDOS
-- Agregar notificaciones (email o aviso en pantalla) cuando un préstamo
-  está por vencer o ya está atrasado.
-- Sumar el estado "Reservado" al enum de equipos, para diferenciar una
-  reserva a futuro de un retiro inmediato.
-- Permitir que cada usuario cambie su propia contraseña (hoy solo el
-  administrador puede resetearla).
 
