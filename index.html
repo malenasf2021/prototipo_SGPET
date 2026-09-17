@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>SGPET - Iniciar sesión</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-box">
+        <h1>SGPET</h1>
+        <p class="subtitle">Sistema de Gestión de Préstamos de Equipamiento Tecnológico</p>
+
+        <div id="error-box" class="error-msg" style="display:none;"></div>
+
+        <form action="login_process.php" method="POST">
+            <label for="id_usuario">ID de usuario (5 dígitos)</label>
+            <input type="text" id="id_usuario" name="id_usuario" maxlength="5" pattern="\d{5}" required autofocus>
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+
+    <script>
+        // login_process.php redirige acá con ?error=mensaje cuando algo falla.
+        // Como este archivo es HTML puro (no PHP), el mensaje se lee del
+        // query string con JavaScript en lugar de $_SESSION.
+        const params = new URLSearchParams(window.location.search);
+        const error = params.get('error');
+        if (error) {
+            const box = document.getElementById('error-box');
+            box.textContent = error;
+            box.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
